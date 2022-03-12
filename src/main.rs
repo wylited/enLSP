@@ -1,7 +1,6 @@
-pub mod lib;
+pub mod server;
 
 // The main entry point to en_LSP. Parses the CLI arguments, then runs the server.
-
 #[tokio::main]
 async fn main() {
     let exit = parse_main();
@@ -10,13 +9,11 @@ async fn main() {
 
 async fn parse_main() -> i32 {
     env_logger::init();
-    let stdin = tokio::io::stdin();
-    let stdout = tokio::io::stdout();
 
     if let Some(first_arg) = std::env::args().nth(1) {
         return match first_arg.as_str() {
             "--version" | "-V" => {
-                println!("{}", lib::version());
+                println!("{}", version());
                 0
             }
             "--help" | "-h" => {
@@ -34,7 +31,7 @@ async fn parse_main() -> i32 {
         };
     }
 
-    0
+    server::run_server().await
 }
 
 fn help() -> &'static str {
@@ -44,4 +41,10 @@ fn help() -> &'static str {
     --cli starts the enLSP in command line mode
     No input starts the enLSP as a language server
     "#
+}
+
+fn version() -> String {
+    use rustc_tools_util::VersionInfo;
+
+    rustc_tools_util::get_version_info!().to_string()
 }

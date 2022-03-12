@@ -95,9 +95,9 @@ dependencies = [
  "rustc_tools_util",
  "serde",
  "serde_derive",
- "serde_ignored",
  "serde_json",
  "tokio",
+ "tokio-util",
  "tower-lsp",
  "url",
  "walkdir",
@@ -566,15 +566,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde_ignored"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c2c7d39d14f2f2ea82239de71594782f186fd03501ac81f0ce08e674819ff2f"
-dependencies = [
- "serde",
-]
-
-[[package]]
 name = "serde_json"
 version = "1.0.79"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -701,9 +692,12 @@ checksum = "64910e1b9c1901aaf5375561e35b9c057d95ff41a44ede043a03e09279eabaf1"
 dependencies = [
  "bytes",
  "futures-core",
+ "futures-io",
  "futures-sink",
+ "futures-util",
  "log",
  "pin-project-lite",
+ "slab",
  "tokio",
 ]
 

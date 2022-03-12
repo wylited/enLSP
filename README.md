@@ -79,7 +79,6 @@ some configuration file will be made later and an explanation of how to configur
 - [ ] basic grammar
 - [ ] advanced autocomplete. (intelligent autocomplete using context)
 - [ ] advanced grammar. (intelligent grammar using context)
-- [ ] 
 
 ## Troubleshooting
 idk message me at wylited#1010 on discord if you want help or want to help.
