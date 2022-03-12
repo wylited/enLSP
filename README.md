@@ -46,40 +46,40 @@ some configuration file will be made later and an explanation of how to configur
 
 
 ## Feature Roadmap
-- [] basic LSP
-- [] basic autocompletion
-- [] basic syntax highlighting
-    - [] parts of speech
-        - [] nouns
-        - [] pronouns
-        - [] verbs
-        - [] adjective
-        - [] adverb
-        - [] preposition
-        - [] conjuction
-        - [] interjection
-        - [] article
-    - [] tenses
-        - [] simple
-            - [] present
-            - [] past
-            - [] future
-        - [] continuous
-            - [] present
-            - [] past
-            - [] future
-        - [] perfect
-            - [] present
-            - [] past
-            - [] future
-        - [] perfect continous
-            - [] present
-            - [] past
-            - [] future
-- [] basic grammar
-- [] advanced autocomplete. (intelligent autocomplete using context)
-- [] advanced grammar. (intelligent grammar using context)
-- [] 
+- [ ] basic LSP
+- [ ] basic autocompletion
+- [ ] basic syntax highlighting
+    - [ ] parts of speech
+        - [ ] nouns
+        - [ ] pronouns
+        - [ ] verbs
+        - [ ] adjective
+        - [ ] adverb
+        - [ ] preposition
+        - [ ] conjuction
+        - [ ] interjection
+        - [ ] article
+    - [ ] tenses
+        - [ ] simple
+            - [ ] present
+            - [ ] past
+            - [ ] future
+        - [ ] continuous
+            - [ ] present
+            - [ ] past
+            - [ ] future
+        - [ ] perfect
+            - [ ] present
+            - [ ] past
+            - [ ] future
+        - [ ] perfect continous
+            - [ ] present
+            - [ ] past
+            - [ ] future
+- [ ] basic grammar
+- [ ] advanced autocomplete. (intelligent autocomplete using context)
+- [ ] advanced grammar. (intelligent grammar using context)
+- [ ] 
 
 ## Troubleshooting
 idk message me at wylited#1010 on discord if you want help or want to help.
