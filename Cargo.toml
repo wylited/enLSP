@@ -1,0 +1,25 @@
+[package]
+name = "en_lsp"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+env_logger = "0.9"
+home = "0.5.1"
+itertools = "0.10"
+jsonrpc-core = "18"
+lazy_static = "1"
+log = "0.4"
+lsp-types = { version = "0.92.0", features = ["proposed"] }
+regex = "1.5"
+rustc_tools_util = "0.2"
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+serde_ignored = "0.1"
+tokio = { version = "1.17.0", features = ["full"] }
+tower-lsp = "0.16.0"
+url = "2.2"
+walkdir = "2.3"
