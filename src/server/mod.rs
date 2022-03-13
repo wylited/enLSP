@@ -44,31 +44,37 @@ impl LanguageServer for Backend {
         self.client
             .log_message(MessageType::INFO, "initialized!")
             .await;
+        dbg!("initialized");
     }
 
     async fn shutdown(&self) -> tower_lsp::jsonrpc::Result<()> {
+        dbg!("shutting down");
         Ok(())
     }
 
     async fn did_change_workspace_folders(&self, _: DidChangeWorkspaceFoldersParams) {
+        dbg!("workspace folder changed");
         self.client
             .log_message(MessageType::INFO, "workspace folders changed!")
             .await;
     }
 
     async fn did_change_configuration(&self, _: DidChangeConfigurationParams) {
+        dbg!("configuration changed");
         self.client
             .log_message(MessageType::INFO, "configuration changed!")
             .await;
     }
 
     async fn did_change_watched_files(&self, _: DidChangeWatchedFilesParams) {
+        dbg!("file changed");
         self.client
             .log_message(MessageType::INFO, "watched files have changed!")
             .await;
     }
 
     async fn execute_command(&self, _: ExecuteCommandParams) -> tower_lsp::jsonrpc::Result<Option<Value>> {
+        dbg!("command executed");
         self.client
             .log_message(MessageType::INFO, "command executed!")
             .await;
@@ -83,24 +89,28 @@ impl LanguageServer for Backend {
     }
 
     async fn did_open(&self, _: DidOpenTextDocumentParams) {
+        dbg!("opened file");
         self.client
             .log_message(MessageType::INFO, "file opened!")
             .await;
     }
 
     async fn did_change(&self, _: DidChangeTextDocumentParams) {
+        dbg!("changed file");
         self.client
             .log_message(MessageType::INFO, "file changed!")
             .await;
     }
 
     async fn did_save(&self, _: DidSaveTextDocumentParams) {
+        dbg!("saved file");
         self.client
             .log_message(MessageType::INFO, "file saved!")
             .await;
     }
 
     async fn did_close(&self, _: DidCloseTextDocumentParams) {
+        dbg!("closed file");
         self.client
             .log_message(MessageType::INFO, "file closed!")
             .await;
@@ -124,8 +134,10 @@ pub async fn run_server() -> i32 {
     let (stdin, stdout) = (stdin.compat(), stdout.compat_write());
 
     dbg!("Language Server starting up. Version: {}", crate::version());
+
     let (service, socket) = LspService::new(|client| Backend { client });
     Server::new(stdin, stdout, socket).serve(service).await;
+    
     dbg!("Server shutting down");
     0
 }

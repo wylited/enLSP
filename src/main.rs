@@ -30,7 +30,6 @@ async fn parse_main() -> i32 {
             }
         };
     }
-
     server::run_server().await
 }
 
